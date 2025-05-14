@@ -27,6 +27,8 @@ class Ticket{
     String status;
     String emissor;
     String data; //Verificar tipo para data
+    int id_ticket;
+    String titulo;
     String descricao;
     Funcionarios responsavel = null;
     Prioridade prioridade;
