@@ -39,10 +39,16 @@ class Ticket{
 
 }
 
-class CaixaEntrada{
-    ArrayList<Ticket>;
-    //Criar funcao para organizar por prioridade (Organizacao);
+interface OrganizaTicket{
+    void organizarPorPrioridade();
 }
+
+class CaixaEntrada implement OrganizaTicket {
+    ArrayList<Ticket> caixa_de_entrada;
+    organizarPorPrioridade();
+}
+
+
 
 class Resposaveis  Funcionarios{ //Descobrir se devo usar extend ou implement para o responsavel herdar o nome para usar em nome_resp
     String nome_resp = ;
