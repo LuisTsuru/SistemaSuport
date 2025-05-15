@@ -9,8 +9,8 @@ public class Main {
 }
 
 class Pessoa{
-    String nome;
-    String cpf; //Verificar se String e um tipo decente para cpf
+    abstract String nome;
+    abstract String cpf; //Verificar se String e um tipo decente para cpf
 }
 class Funcionarios extends Pessoa{
     String cargo;
@@ -26,8 +26,8 @@ class Prioridade{
 class Ticket{
     String status;
     String emissor;
-    String data; //Verificar tipo para data
-    int id_ticket;
+    Date data; //Verificar tipo para data
+    int id_ticket; 
     String titulo;
     String descricao;
     Funcionarios responsavel = null;
@@ -36,11 +36,11 @@ class Ticket{
 }
 class CaixaEntrada{
     ArrayList<Ticket>;
-    //Criar funcao para organizar por prioridade;
+    //Criar funcao para organizar por prioridade (Organizacao);
 }
 class Resposaveis{
     String nome_resp;
-    String ttr; //defirinir tipo para data (ttr eh o tempo para conclusao limite de ticket)
+    Date ttr; //defirinir tipo para data (ttr eh o tempo para conclusao limite de ticket)
 
 }
 
