@@ -7,7 +7,7 @@ public class Main {
     public static void printMenu(){
         Scanner s= new Scanner(System.in);
         System.out.println("========== M E N U ==========");
-        System.out.println("1 - Criar Ticket\n2- Visualizar Caixa de entrada\n\3- Atribuir Ticket a time/Individuo\n4 - Visualizar Caixa Individual\n5 - Visualizar Caixa de Time");
+        System.out.println("1 - Criar Ticket\n2- Visualizar Caixa de entrada\n3- Atribuir Ticket a time/Individuo\n4 - Visualizar Caixa Individual\n5 - Visualizar Caixa de Time");
         System.out.println("=============================");
         System.out.print("Digite opcao: ");
         int opcao = s.nextInt();
@@ -29,7 +29,7 @@ public class Main {
                 //funcao5
                 break;
             default:
-                System.out.println("Opcao invalida :()");
+                System.out.println("Opcao invalida :(");
 
         }
 
