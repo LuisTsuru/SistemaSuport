@@ -14,7 +14,7 @@ public class Main {
 
         switch(opcao){
             case 1:
-                //funcao1
+                System.out.println("Bogos");
                 break;
             case 2:
                 //funcao2
@@ -29,7 +29,7 @@ public class Main {
                 //funcao5
                 break;
             default:
-                System.out.println("Opcao invalida :(");
+                System.out.println("Opcao invalida :( 1231213");
 
         }
 
