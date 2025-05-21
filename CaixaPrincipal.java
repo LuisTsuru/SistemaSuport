@@ -25,22 +25,38 @@ public class CaixaPrincipal extends JFrame {
         JLabel caixa_titulo = new JLabel("Caixa de entrada");
         caixa_titulo.setFont(new Font("Arial", Font.BOLD, 25));
         caixa_titulo.setAlignmentX(Component.CENTER_ALIGNMENT);
-        caixa_titulo.setBorder(BorderFactory.createEmptyBorder(20, 10, 300, 20)); // Espaçamento
+        caixa_titulo.setBorder(BorderFactory.createEmptyBorder(20, 10, 100, 20)); // Espaçamento
         
         //Botão atribuir chamada
-          JButton btnchamada = new JButton("Upload");
+          JButton btnchamada = new JButton("Atribuir chamado");
         btnchamada.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnchamada.setMaximumSize(new Dimension(150, 30));
         btnchamada.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0)); 
         btnchamada.setBorder(new LineBorder(Color.lightGray, 2));
 
+        //Botão Excluir chamado
+          JButton btnexcluir_chamada = new JButton("Excluir chamado");
+        btnexcluir_chamada.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btnexcluir_chamada.setMaximumSize(new Dimension(150, 30));
+        btnexcluir_chamada.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0)); 
+        btnexcluir_chamada.setBorder(new LineBorder(Color.lightGray, 2));
+
+        //Botão Visualizar chamadas
+          JButton btnvizu_chamada = new JButton("Visualizar chamados");
+        btnvizu_chamada.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btnvizu_chamada.setMaximumSize(new Dimension(150, 30));
+        btnvizu_chamada.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 0)); 
+        btnvizu_chamada.setBorder(new LineBorder(Color.lightGray, 2));
+
         // Adiciona e organiza os elementos ao painel
         painelPrincipal.add(Box.createRigidArea(new Dimension(0, 10)));
         painelPrincipal.add(titulo);
         painelPrincipal.add(caixa_titulo);
+        painelPrincipal.add(Box.createRigidArea(new Dimension(0, 50)));
         painelPrincipal.add(btnchamada);
-        painelPrincipal.add(Box.createRigidArea(new Dimension(0, 70)));
-        painelPrincipal.add(Box.createRigidArea(new Dimension(0, 10)));        
+        painelPrincipal.add(btnexcluir_chamada);
+        painelPrincipal.add(btnvizu_chamada);
+            
 
         
         add(painelPrincipal);
