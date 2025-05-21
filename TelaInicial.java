@@ -56,7 +56,7 @@ public class TelaInicial extends JFrame {
         add(painelPrincipal);
         btnEscolher.addActionListener(e -> {
             JFileChooser seletor = new JFileChooser(); // Objeto para procurar o arquivo no pc
-            FileNameExtensionFilter filtro = new  FileNameExtensionFilter("Apenas arquivos de texto", "txt");
+            FileNameExtensionFilter filtro = new  FileNameExtensionFilter("Apenas arquivos de texto", "txt"); //Filtrar por .txt
             seletor.setFileFilter(filtro);
             int resultado = seletor.showOpenDialog(null); 
         
