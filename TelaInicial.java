@@ -66,7 +66,9 @@ public class TelaInicial extends JFrame {
             lblArquivoSelecionado.setText(arquivoSelecionado.getName()); //Muda o texto de "labelArquivoSelecionado" para o nome arquivo selecionado
             btnUpload.setEnabled(true); // Ativa o botao upload
             btnUpload.addActionListener(b ->{
-                JOptionPane.showMessageDialog(null, "Mnsagem!1");
+                JOptionPane.showMessageDialog(null, "Arquivo valido");
+                //Envia o arquivo .txt para o Leitor tratar os dados
+                Leitor.ler(arquivoSelecionado);
             });
 
             

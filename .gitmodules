@@ -1,0 +1,3 @@
+[submodule "SistemaSupport"]
+	path = SistemaSupport
+	url = https://github.com/LuisTsuru/SistemaSuport.git
