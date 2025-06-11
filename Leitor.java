@@ -1,11 +1,15 @@
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Leitor {
     public static void ler(File arquivo) {
         //Cria os vetores para armazenar os arquivos
-        List<Funcionarios> funcionarios = new ArrayList<>();
-        List<Ticket> tickets = new ArrayList<>();
+        List<Funcionarios> funcionario_list = new ArrayList<>();
+        List<Ticket> tickets_list = new ArrayList<>();
+        //para conseguir armazenar no tipo data
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         //Le o arquivo de texto
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
@@ -17,19 +21,33 @@ public class Leitor {
                 if (partes.length == 10) {
                     String nome = partes[0];
                     String area = partes[1];
-                    String id = partes[2];
+                    Funcionarios responsavel = new Funcionarios(nome, area);
+                    funcionario_list.add(responsavel);
+                    String idstr = partes[2];
                     String emissor = partes[3];
-                    String data = partes[4];
+                    String dataStr = partes[4];
                     String status = partes[5];
                     String titulo = partes[6];
                     String desc = partes[7];
                     String tipo = partes[8];
-                    String prioridade = partes[9];
+                    String prioridadestr = partes[9];
+                    int id = Integer.parseInt(idstr);
 
+                    Date data = null;
+                    // Convertendo dados
+                    try { // tenta transforma string em Date
+                        Date data = sdf.parse(dataStr);
+                    } catch (ParseException e) {
+                        System.out.println("Data em formato inválido: " + dataStr);
+                        e.printStackTrace(); // ou trate de outra forma
+                    } 
 
+                    Prioridade prioridade = Prioridade.valueOf(prioridadestr.toUpperCase());
+                    Ticket tick = new Ticket(id, emissor, data, status, titulo, desc, tipo, responsavel, prioridade);
 
-                    int idade = Integer.parseInt(partes[1]);
-                    funcionarios.add(new funcionarios(nome, idade));
+                    funcionario_list.add(responsavel);
+
+                
                 }
             }
         } catch (IOException e) {
@@ -37,7 +55,7 @@ public class Leitor {
         }
 
         // Exibe as pessoas lidas
-        for (Funcionarios p : funcionarios) {
+        for (Funcionarios p : funcionario_list) {
             System.out.println(p);
         }
     }

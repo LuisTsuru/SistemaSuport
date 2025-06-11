@@ -51,15 +51,24 @@ abstract class Pessoa{
 class Funcionarios extends Pessoa{
     private String cargo;
     private String grupo;
-    ArrayList<Ticket> ticket_individual; // Ideia para criar caixa entrada para cada funcionario e seus tickets
+    ArrayList<Ticket> ticket_individual; 
+    // Ideia para criar caixa entrada para cada funcionario e seus tickets
+
+    public Funcionarios(String nome, String area) {
+        this.nome = nome;
+        this.grupo = area;
+    }
+     @Override
+    public String toString() {
+        return nome + " (" + grupo + ")";
+    }
+
+
 
 }
 
-class Prioridade {
-    private int prioridade;
-    private String tipo_afetado; //Afeta pessoa, servico ou departamento
-
-
+public enum Prioridade {
+    ALTA, MEDIA, BAIXA;
 }
 
 class Ticket{
@@ -73,25 +82,24 @@ class Ticket{
     private Funcionarios responsavel = null;
     private Prioridade gravidade;
 
+    public Ticket(int id_ticket, String emissor, Date data, String status, String titulo, String descricao, String tipo_servico, Funcionarios responsavel, Prioridade gravidade) {
+        this.id_ticket = id_ticket;
+        this.emissor = emissor;
+        this.data = data;
+        this.status = status;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.tipo_servico = tipo_servico;
+        this.responsavel = responsavel;
+        this.gravidade = gravidade;
+    }
 }
 
-//interface OrganizaTicket{
-//    void organizarPorPrioridade();
-//}
-//
-//class CaixaEntrada implements OrganizaTicket {
-//    ArrayList<Ticket> caixa_de_entrada;
-//    organizarPorPrioridade();
-//
-//    @Override
-//    public void organizarPorPrioridade() {
-//
-//    }
-//}
 
 
 
-class Resposaveis extends Funcionarios{ //Descobrir se devo usar extend ou implement para o responsavel herdar o nome para usar em nome_resp
+class Resposaveis extends Funcionarios{ 
+    //Descobrir se devo usar extend ou implement para o responsavel herdar o nome para usar em nome_resp
     String nome_resp = nome;
     Date ttr; //defininir tipo para data (ttr eh o tempo para conclusao limite de ticket)
 

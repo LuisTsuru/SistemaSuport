@@ -68,7 +68,9 @@ public class TelaInicial extends JFrame {
             btnUpload.addActionListener(b ->{
                 JOptionPane.showMessageDialog(null, "Arquivo valido");
                 //Envia o arquivo .txt para o Leitor tratar os dados
+                //Executa o Leitor.java
                 Leitor.ler(arquivoSelecionado);
+                
             });
 
             
